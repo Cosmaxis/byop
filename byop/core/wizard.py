@@ -125,7 +125,7 @@ def run_wizard(prefill: ProviderConfig | None = None) -> tuple[ProviderConfig, d
                 default=prefill.provider_name,
             )
     else:
-        provider_name = prompt.ask("Provider name (e.g. 'HyberOrbit')")
+        provider_name = prompt.ask("Provider name (e.g. 'Cosmaxis')")
 
     if prefill is not None and _present("api_url"):
         if pasted_prefill is not None:

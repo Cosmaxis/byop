@@ -112,7 +112,7 @@ def test_run_wizard_accepts_full_paste():
     """Full JSON paste should skip all field prompts."""
     paste = json.dumps(
         {
-            "provider_name": "HyberOrbit",
+            "provider_name": "Cosmaxis",
             "api_url": "https://api.example.com/v1",
             "api_key": "sk-12345678",
             "models": [{"name": "hy3"}],
@@ -130,7 +130,7 @@ def test_run_wizard_accepts_full_paste():
     with p_ask, p_secret, p_int, p_confirm:
         provider, prefs = wizard.run_wizard()
 
-    assert provider.provider_name == "HyberOrbit"
+    assert provider.provider_name == "Cosmaxis"
     assert provider.api_url == "https://api.example.com/v1"
     assert provider.api_key == "sk-12345678"
     assert [m.name for m in provider.models] == ["hy3"]
@@ -142,7 +142,7 @@ def test_run_wizard_falls_back_to_secret_prompt_when_paste_missing_key():
     """Partial paste (no api_key) must still ask for the key via ask_secret."""
     paste = json.dumps(
         {
-            "provider_name": "HyberOrbit",
+            "provider_name": "Cosmaxis",
             "api_url": "https://api.example.com/v1",
             "models": [{"name": "hy3"}],
         },

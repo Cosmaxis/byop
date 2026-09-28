@@ -1,6 +1,6 @@
 # byop
 
-[![CI](https://github.com/thinhngotony/byop/actions/workflows/ci.yml/badge.svg)](https://github.com/thinhngotony/byop/actions/workflows/ci.yml)
+[![CI](https://github.com/Cosmaxis/byop/actions/workflows/ci.yml/badge.svg)](https://github.com/Cosmaxis/byop/actions/workflows/ci.yml)
 [![Python](https://img.shields.io/badge/python-3.11%2B-blue.svg)](https://www.python.org)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
@@ -53,7 +53,7 @@ Warp support currently prints exact values for manual entry in Warp Settings > A
 ### One command (recommended)
 
 ```bash
-curl -sfS https://byop.hyberorbit.com/install | sh
+curl -sfS https://byop.cosmaxis.com/install | sh
 ```
 
 This installs the `byop` command (via [pipx](https://pipx.pypa.io) when
@@ -61,12 +61,12 @@ available, pinned to the latest release). Requires macOS and Python 3.11+;
 Homebrew is used to install any missing prerequisites.
 
 > Prefer to read before you run? Inspect the script first:
-> `curl -sfS https://byop.hyberorbit.com/install`
+> `curl -sfS https://byop.cosmaxis.com/install`
 
 ### From source
 
 ```bash
-git clone https://github.com/thinhngotony/byop.git
+git clone https://github.com/Cosmaxis/byop.git
 cd byop
 python3 -m pip install -e ".[dev]"      # includes test/lint/type tooling
 ```
@@ -74,7 +74,7 @@ python3 -m pip install -e ".[dev]"      # includes test/lint/type tooling
 ### With pipx (from GitHub)
 
 ```bash
-pipx install "git+https://github.com/thinhngotony/byop.git"
+pipx install "git+https://github.com/Cosmaxis/byop.git"
 ```
 
 ## Usage
@@ -134,7 +134,7 @@ copying a fragment into another tool:
 ```bash
 byop --export-config                            # all targets, all providers
 byop --export-config --target zed               # just Zed
-byop --export-config --export-provider HyberOrbit  # only that name
+byop --export-config --export-provider Cosmaxis  # only that name
 ```
 
 Output shape (one key per target, `config_path` shows where the target would
@@ -144,7 +144,7 @@ write):
 {
   "zed": {
     "config_path": "/Users/you/.config/zed/settings.json",
-    "providers": { "HyberOrbit": { "api_url": "...", "available_models": [...] } },
+    "providers": { "Cosmaxis": { "api_url": "...", "available_models": [...] } },
     "agent": { "default_model": { ... } },
     "edit_predictions": { ... }
   },

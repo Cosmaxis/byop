@@ -4,10 +4,10 @@ set -e
 # =============================================================================
 # byop installer — Bring Your Own Provider
 # Wire a custom OpenAI-compatible LLM provider into Zed, py.dev, and more.
-# https://github.com/thinhngotony/byop
+# https://github.com/Cosmaxis/byop
 # =============================================================================
 
-REPO="thinhngotony/byop"
+REPO="Cosmaxis/byop"
 BYOP_REPO_URL="${BYOP_REPO_URL:-https://github.com/${REPO}.git}"
 
 # Colors

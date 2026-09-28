@@ -63,7 +63,7 @@ def test_install_falls_back_to_npm():
 # ----------------------------------------------------------------------
 def _provider(**over):
     base = {
-        "provider_name": "HyberOrbit",
+        "provider_name": "Cosmaxis",
         "api_url": "https://api.example.com/v1/",
         "api_key": "sk-12345678",
         "models": [
@@ -76,7 +76,7 @@ def _provider(**over):
 
 def test_build_fragment_shape():
     frag = ClaudeTarget().build_fragment(_provider())
-    assert frag["provider"] == "HyberOrbit"
+    assert frag["provider"] == "Cosmaxis"
     # Trailing slash normalized away.
     assert frag["apiBaseUrl"] == "https://api.example.com/v1"
     assert frag["model"] == "hy3"
@@ -94,7 +94,7 @@ def test_configure_writes_settings_json_with_keychain_command(tmp_path):
          mock.patch("byop.core.targets.claude.kc.ensure_key", return_value=["k"]):
         target.configure(_provider(), log=lambda m: None)
     data = json.loads(settings.read_text())
-    assert data["provider"] == "HyberOrbit"
+    assert data["provider"] == "Cosmaxis"
     assert data["apiBaseUrl"] == "https://api.example.com/v1"
     assert data["apiKey"].startswith("!security find-internet-password")
 
@@ -115,7 +115,7 @@ def test_configure_skip_when_settings_already_match(tmp_path):
     """Idempotent re-run with conflict_action='skip' and matching settings = no-op."""
     settings = tmp_path / "settings.json"
     settings.write_text(json.dumps({
-        "provider": "HyberOrbit",
+        "provider": "Cosmaxis",
         "apiBaseUrl": "https://api.example.com/v1",
         "model": "hy3",
         "models": [{"id": "hy3", "context_window": 250000, "max_tokens": 32000}],
@@ -140,9 +140,9 @@ def test_configure_skip_when_settings_already_match(tmp_path):
 
 def test_current_provider_names_when_present(tmp_path):
     settings = tmp_path / "settings.json"
-    settings.write_text(json.dumps({"provider": "HyberOrbit"}))
+    settings.write_text(json.dumps({"provider": "Cosmaxis"}))
     target = ClaudeTarget(settings_path=settings)
-    assert target.current_provider_names() == ["HyberOrbit"]
+    assert target.current_provider_names() == ["Cosmaxis"]
 
 
 def test_current_provider_names_when_absent(tmp_path):

@@ -26,5 +26,5 @@ def test_strip_escape_chars_removes_esc_bytes():
 
 def test_strip_escape_chars_does_not_touch_legitimate_text():
     """Letters, digits, slashes, braces — all preserved."""
-    payload = '{"name": "HyberOrbit", "url": "https://api.example.com/v1"}'
+    payload = '{"name": "Cosmaxis", "url": "https://api.example.com/v1"}'
     assert prompt._strip_escape_chars(payload) == payload

@@ -36,7 +36,7 @@ dev = ["pytest>=7.0", "pytest-cov", "ruff", "mypy"]
 byop = "byop.cli:main"
 
 [project.urls]
-Homepage = "https://github.com/thinhngotony/byop"
+Homepage = "https://github.com/Cosmaxis/byop"
 
 [tool.setuptools.packages.find]
 include = ["byop", "byop.*"]
